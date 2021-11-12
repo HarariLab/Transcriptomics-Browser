@@ -1,5 +1,5 @@
 library(DESeq2)
-## read technical data
+## read technical dat
 ## removed MAP_60180 and MAP_60007 due to irregularity as a control sample 
 mend.tech <- read.csv('/40/Cruchaga_Data/bulkRNASeq/201703_MendelianVsSporadics/03.-Phenotype/2020_09_11_WashU_MendalianVsSporadics_technical.csv', header =T, sep=",", stringsAsFactors = F, check.names = F)
 sunshine.tech <- read.csv('/40/Cruchaga_Data/bulkRNASeq/201904_MGI_bulkRNAseq_SUNSHINE/03.-Phenotype/2020_09_16_WashU_SUNSHINE_technical.csv', header =T, sep=",", stringsAsFactors = F, check.names = F)
