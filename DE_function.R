@@ -108,7 +108,7 @@ DEfunction <- function(model_name){
     res <- results(dds, contrast = c("Status", "Neuro_AD", "Neuro_CO"), alpha = 0.05)
   }
   if (status == FALSE){
-    res <- results(dds)
+    res <- results(dds, alpha = 0.05)
   }
   
   ##writing DESeq results to csv 
