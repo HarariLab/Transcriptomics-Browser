@@ -67,10 +67,11 @@ DEfunction <- function(model_name){
   if (model_name == "Sex+Age+Braak1"){
     model_file <- paste0(model_name, ".csv")
     mend_sunshine.clin_Braak4 <- mend_sunshine.clin_Braak4[match(colnames(cts_sub_Braak2), mend_sunshine.clin_Braak4$Sample_ID),]
+    mend_sunshine.clin_Braak4$Braa
     all(mend_sunshine.clin_Braak4$Sample_ID == colnames(cts_sub_Braak2))
     counts = cts_sub_Braak2
     cols = mend_sunshine.clin_Braak4
-    designs = ~ Sex + AOD + BraakTau
+    designs = ~ Sex + AOD + BraakTauNum
   }
   if (model_name == "Sex+Age+PMI+Braak1"){
     model_file <- paste0(model_name, ".csv")
@@ -78,21 +79,21 @@ DEfunction <- function(model_name){
     all(mend_sunshine.clin_PMI_Braak4$Sample_ID == colnames(cts_sub_Braak_PMI3))
     counts = cts_sub_Braak_PMI3
     cols = mend_sunshine.clin_PMI_Braak4
-    designs = ~ Sex + AOD + PMI + BraakTau
+    designs = ~ Sex + AOD + PMI + BraakTauNum
   }
   if (model_name == "Sex+Age+PMI+Cohort+Braak1"){
     model_file <- paste0(model_name, ".csv")
     all(mend_sunshine.clin_PMI_Braak4$Sample_ID == colnames(cts_sub_Braak_PMI3))
     counts = cts_sub_Braak_PMI3
     cols = mend_sunshine.clin_PMI_Braak4
-    designs = ~ Sex + AOD + PMI + Cohort + BraakTau
+    designs = ~ Sex + AOD + PMI + Cohort + BraakTauNum
   }
   if (model_name == "Sex+Age+Cohort+Braak1"){
     model_file <- paste0(model_name, ".csv")
     all(mend_sunshine.clin_Braak4$Sample_ID == colnames(cts_sub_Braak2))
     counts = cts_sub_Braak2
     cols = mend_sunshine.clin_Braak4
-    designs = ~ Sex + AOD + Cohort + BraakTau
+    designs = ~ Sex + AOD + Cohort + BraakTauNum
   }
   dds <- DESeqDataSetFromMatrix(countData = counts,
                                colData = cols,
@@ -130,5 +131,4 @@ DEfunction <- function(model_name){
   
 }
 
-DEfunction("Sex+Age+Braak1")
-
+DEfunction("Sex+Age+Cohort+Braak1")
