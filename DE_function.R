@@ -67,7 +67,6 @@ DEfunction <- function(model_name){
   if (model_name == "Sex+Age+Braak1"){
     model_file <- paste0(model_name, ".csv")
     mend_sunshine.clin_Braak4 <- mend_sunshine.clin_Braak4[match(colnames(cts_sub_Braak2), mend_sunshine.clin_Braak4$Sample_ID),]
-    mend_sunshine.clin_Braak4$Braa
     all(mend_sunshine.clin_Braak4$Sample_ID == colnames(cts_sub_Braak2))
     counts = cts_sub_Braak2
     cols = mend_sunshine.clin_Braak4
